@@ -1,0 +1,509 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2D7A3E;
+    --primary-dark: #1f5428;
+    --text-color: #1a1a1a;
+    --text-light: #666666;
+    --bg-color: #f9fcf7; /* Light cream-green for richer base */
+    --bg-light: #e8f3e9; /* Soft green tint for sections */
+    --border-color: #d0e0d3; /* Softer green-tinted border */
+    --accent-color: #4a9c5c; /* Mid-green accent for highlights */
+    --shadow-color: rgba(45, 122, 62, 0.1); /* Subtle green shadow */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px var(--shadow-color); /* Added subtle shadow for depth */
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color); /* Changed to primary for richer look */
+    cursor: pointer;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color); /* Darker for better contrast */
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-dark); /* Deeper hover color */
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background-color: var(--bg-color);
+        border-bottom: 1px solid var(--border-color);
+        padding: 20px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 15px 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Main sections */
+main {
+    flex: 1;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--primary-dark); /* Deeper primary for titles */
+}
+
+section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+section p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Welcome Section */
+#welcome {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./attached_assets/generated_images/seeds_and_grains_background_image.png'); /* Slightly less opaque overlay for richer image show-through */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: left;
+    padding: 60px 20px; /* Reduced vertical padding to decrease overall height */
+}
+
+#welcome .welcome-heading {
+    font-size: 45px;
+    max-width: 1200px; /* Increased for more horizontal coverage */
+    margin: 0 0 20px 100px;
+    color: #ffffff; /* White for better contrast on darker overlay */
+    font-weight: bold;
+}
+
+#welcome .welcome-subheading {
+    font-size: 20px;
+    max-width: 935px; /* Increased for more horizontal coverage */
+    margin: 0 0 20px 100px;
+    color: white;
+}
+
+#welcome .welcome-body {
+    color: rgba(255, 255, 255, 0.9); /* Slightly brighter text */
+    max-width: 935px; /* Increased for more horizontal coverage */
+    font-size: 17px;
+    margin: 0 0 20px 100px;
+}
+
+/* Products Section */
+#products {
+    background-color: var(--bg-light);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* exactly 2 per row */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.product-card {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: box-shadow 0.3s, transform 0.3s; /* Added transform for lift effect */
+}
+
+.product-card:hover {
+    box-shadow: 0 6px 16px var(--shadow-color); /* Deeper shadow */
+    transform: translateY(-4px); /* Lift on hover for richness */
+}
+
+.product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.product-content {
+    padding: 20px;
+}
+
+.product-content h3 {
+    color: var(--accent-color); /* Using accent for product titles */
+    margin-bottom: 12px;
+}
+
+.product-content p {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+@media (max-width: 700px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Services Section */
+#services {
+    background-color: var(--bg-color);
+}
+
+.services-list {
+    display: grid;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.service-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color); /* Accent border for pop */
+    transition: box-shadow 0.3s;
+}
+
+.service-item:hover {
+    box-shadow: 0 4px 12px var(--shadow-color); /* Hover shadow for depth */
+}
+
+.service-icon {
+    color: var(--primary-dark); /* Deeper icon color */
+    min-width: 24px;
+    margin-top: 5px;
+}
+
+.service-content h4 {
+    color: var(--text-color);
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.service-content p {
+    color: var(--text-light);
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Contact Section */
+#contact {
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    padding: 40px 20px;
+}
+
+/* wrapper to constrain width */
+#contact .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* contact-container:
+   - If .contact-only present -> single, centered column (no form)
+   - Otherwise you can keep original 2-column layout */
+.contact-container {
+    display: grid;
+    gap: 50px;
+    margin-top: 24px;
+    grid-template-columns: 1fr; /* default single column for contact-only */
+}
+
+/* If you later re-add the form, remove .contact-only class and the following rule will apply:
+   .contact-container { grid-template-columns: 1fr 1fr; } */
+
+/* responsive */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+/* left column stack spacing */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+/* contact-block: icon + text */
+.contact-block {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+/* circular icon style */
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(74, 156, 92, 0.12); /* Slightly richer accent bg */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-dark); /* Deeper icon color */
+    flex-shrink: 0;
+    font-size: 20px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.015);
+}
+
+/* text area inside block */
+.contact-text h4 {
+    color: var(--text-color);
+    margin: 0 0 6px 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.contact-text p {
+    color: var(--text-light);
+    font-size: 14px;
+    margin: 0 0 6px 0;
+    line-height: 1.4;
+}
+
+/* phone / email links */
+.contact-link {
+    color: var(--accent-color); /* Accent for links */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    margin-top: 6px;
+}
+.contact-link:hover {
+    text-decoration: underline;
+    color: var(--primary-dark); /* Darker hover */
+}
+
+/* divider */
+.divider {
+    border-top: 1px solid var(--border-color);
+    margin: 18px 0;
+}
+
+/* note box */
+.contact-note {
+    background-color: rgba(74, 156, 92, 0.06); /* Richer note bg */
+    border-left: 4px solid rgba(74, 156, 92, 0.3);
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* title color */
+#contact h2,
+#contact .info-title {
+    color: var(--primary-dark); /* Deeper title */
+}
+
+/* optional small-screen tweaks */
+@media (max-width: 480px) {
+    #contact { padding: 28px 16px; }
+    .contact-icon { width: 44px; height: 44px; font-size: 18px; }
+}
+
+/* Contact persons two-column layout inside the contact-info */
+.contact-persons {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* left stacked column + right single column */
+    gap: 18px 36px;
+    align-items: start;
+}
+
+/* Each column stacks its persons vertically */
+.persons-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* keep existing .contact-block, .contact-icon, .contact-text, .contact-link styles */
+/* Responsive: stack columns into a single column on small screens */
+@media (max-width: 900px) {
+    .contact-persons {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+}
+
+/* small visual tweak: label the WhatsApp link with subtle left margin */
+.contact-link[aria-label^="WhatsApp"] {
+    margin-left: 2px;
+}
+
+.required {
+    color: #d32f2f;
+}
+
+/* Footer base (keeps your background image + overlay) */
+footer {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url('./attached_assets/generated_images/agricultural_wheat_field_background.png'); /* Slightly less opaque for richer image */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 48px 20px;
+    margin-top: 60px;
+    /* subtle inner shadow at top for separation from content above */
+    box-shadow: inset 0 30px 60px rgba(0,0,0,0.45);
+}
+
+/* container already defined — ensure width constraint */
+.footer-content {
+    max-width: 1100px; /* a bit narrower than 1200 for nicer centering */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Title */
+.footer-title {
+    margin: 0;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    font-weight: 700;
+}
+
+/* Short description centered and constrained width */
+.footer-desc {
+    margin: 0;
+    color: rgba(255,255,255,0.92); /* Brighter text */
+    max-width: 700px;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* Inline nav links centered with even spacing */
+.footer-nav {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    color: rgba(255,255,255,0.95);
+    text-decoration: none;
+    font-size: 15px;
+    padding: 6px 4px;
+    transition: color .12s, transform .08s;
+}
+.footer-nav a:hover {
+    color: rgba(255,255,255,1);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* thin divider line */
+.footer-divider {
+    width: 80%;
+    max-width: 900px;
+    height: 1px;
+    border: none;
+    background: rgba(255,255,255,0.12); /* Slightly richer divider */
+    margin: 18px auto;
+    border-radius: 2px;
+}
+
+/* copyright row */
+.footer-copyright {
+    margin: 0;
+    color: rgba(255,255,255,0.9);
+    font-size: 14px;
+    padding-bottom: 2px;
+}
+
+/* small-screen adjustments */
+@media (max-width: 700px) {
+    .footer-desc { max-width: 92%; font-size: 14px; }
+    .footer-nav { gap: 18px; }
+    .footer-divider { width: 92%; }
+    footer { padding: 36px 16px; }
+}
