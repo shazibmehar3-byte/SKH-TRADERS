@@ -21,11 +21,7 @@ const PRODUCTS = [
       origin: 'Pakistan',
       processing: 'Sortex-cleaned'
     },
-    benefits: ['100% natural', 'Export-grade purity', 'Sortex-processed', 'Food-safe certified'],
-    applications: ['Food Manufacturing', 'Seasoning Companies', 'Spice Blends', 'Oil Extraction'],
-    certification: ['Export Certified', 'Quality Assured', 'Metal Detection Passed'],
-    inStock: true,
-    minOrder: '100kg'
+    minOrder: '25kg'
   },
   {
     id: 'fennel-seeds',
@@ -43,11 +39,7 @@ const PRODUCTS = [
       origin: 'Pakistan',
       processing: 'Sortex-cleaned'
     },
-    benefits: ['100% natural', 'Sweet aroma', 'Sortex-processed', 'Restaurant grade'],
-    applications: ['Beverages', 'Food Manufacturing', 'Spice Blends', 'Pharmaceutical'],
-    certification: ['Export Certified', 'Quality Assured', 'Moisture Controlled'],
-    inStock: true,
-    minOrder: '100kg'
+    minOrder: '25kg'
   },
   {
     id: 'cumin-seeds',
@@ -65,11 +57,7 @@ const PRODUCTS = [
       origin: 'Pakistan',
       processing: 'Sortex-cleaned'
     },
-    benefits: ['Premium seeds', 'Strong aroma', 'Export-grade', 'Bulk availability'],
-    applications: ['Food Manufacturing', 'Spice Blends', 'Seasoning Companies', 'Oil Extraction'],
-    certification: ['Export Certified', 'Quality Assured', 'Metal Detection Passed'],
-    inStock: true,
-    minOrder: '100kg'
+    minOrder: '25kg'
   },
   {
     id: 'carom-seeds',
@@ -88,11 +76,7 @@ const PRODUCTS = [
       origin: 'Pakistan',
       processing: 'Sortex-cleaned'
     },
-    benefits: ['High thymol', 'Strong aroma', 'Pharmaceutical grade', 'Natural'],
-    applications: ['Pharmaceutical Industry', 'Food Manufacturing', 'Ayurvedic', 'Traditional Medicine'],
-    certification: ['Export Certified', 'Pharmaceutical Grade', 'Thymol Tested'],
-    inStock: true,
-    minOrder: '100kg'
+    minOrder: '25kg'
   },
   {
     id: 'black-pepper-whole',
@@ -111,11 +95,7 @@ const PRODUCTS = [
       origin: 'Vietnam / India',
       processing: 'Hand-graded'
     },
-    benefits: ['Restaurant grade', 'Bold flavor', 'Premium quality', 'Sortex option'],
-    applications: ['Food Manufacturing', 'Restaurants', 'Spice Blends', 'Grinding Companies'],
-    certification: ['Export Certified', 'Quality Assured', 'Purity Tested'],
-    inStock: true,
-    minOrder: '100kg'
+    minOrder: '25kg'
   },
   {
     id: 'red-chilli-whole',
@@ -134,11 +114,7 @@ const PRODUCTS = [
       origin: 'Pakistan',
       processing: 'Stemless available'
     },
-    benefits: ['Bright color', 'Consistent heat', 'Low moisture', 'Grinding-ready'],
-    applications: ['Food Manufacturing', 'Sauce Companies', 'Grinding', 'Seasoning Blends'],
-    certification: ['Export Certified', 'Heat Verified', 'Color Graded'],
-    inStock: true,
-    minOrder: '100kg'
+    minOrder: '25kg'
   },
   {
     id: 'turmeric-powder',
@@ -157,11 +133,7 @@ const PRODUCTS = [
       origin: 'Pakistan',
       processing: 'Powder / Fingers available'
     },
-    benefits: ['Natural curcumin', 'Golden color', 'Food-safe', 'Pure & clean'],
-    applications: ['Food Manufacturing', 'Cosmetics', 'Seasoning', 'Pharmaceutical'],
-    certification: ['Export Certified', 'Food Safe', 'Curcumin Tested'],
-    inStock: true,
-    minOrder: '100kg'
+    minOrder: '25kg'
   }
 ];
 
